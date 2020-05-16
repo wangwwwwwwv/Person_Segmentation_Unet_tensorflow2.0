@@ -8,7 +8,7 @@ from tensorflow.compat.v1 import InteractiveSession
 from tensorflow.keras.preprocessing.image import ImageDataGenerator
 import cv2
 
-
+'''
 image=cv2.imread('4972.jpg')
 hight=image.shape[0]
 width=image.shape[1]
@@ -17,7 +17,7 @@ print(hight,width)
 image=cv2.resize(image,(128, 128), interpolation=cv2.INTER_CUBIC)
 image=np.expand_dims(image,axis=0)
 print(image.shape)
-
+'''
 
 os.environ['CUDA_VISIBLE_DEVICES'] = '0'
 config = ConfigProto()
@@ -41,5 +41,5 @@ print(test_acc)
 #trainset = DataGenerator("membrane/train", batch_size=5)
 #model.fit_generator(trainset,steps_per_epoch=5000,epochs=5)
 model.save_weights("model.h5")
-y=model.predict(image)
-np.save('dfs.npy',y)
+#y=model.predict(image)
+#np.save('result.npy',y)
